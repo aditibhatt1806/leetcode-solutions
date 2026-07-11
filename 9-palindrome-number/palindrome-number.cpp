@@ -1,14 +1,10 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if(x<0 || (x%10 == 0 &&x!=0) )return false;
-        int ans = 0;
-        while(x>ans){
-            int rem = x % 10;
-            x /= 10;
-            ans = rem + ans*10;
-            
-        }
-        return (x == ans|| x==ans/10) ;
+      
+        string s = to_string(x);
+        string pali = string(s.rbegin(),s.rend());
+        if (s == pali )return true ;
+        else return false;
     }
 };
